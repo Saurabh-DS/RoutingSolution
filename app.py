@@ -17,12 +17,12 @@ def home():
     return render_template('OptimalRoute.html')
 
 
-@app.route('/main',methods=['GET'])
+@app.route('/main',methods=['POST'])
 def create_data_model():
     data = {}
-    data['distance_matrix'] = []
-    data['vehicle_capacities'] = []
-    data['demands'] = []
+#     data['distance_matrix'] = []
+#     data['vehicle_capacities'] = []
+#     data['demands'] = []
     data['distance_matrix'] = request.args.get('distance_matrix')
     data['vehicle_capacities'] = request.args.get('vehicle_capacities')
     data['demands'] = request.args.get('demands')
@@ -109,7 +109,7 @@ def main():
     search_parameters.time_limit.FromSeconds(1)
 
 
-# @app.route('/predict',methods=['GET'])
+# @app.route('/predict',methods=['POST'])
     solution = routing.SolveWithParameters(search_parameters)
     return render_template('OptimalRoute.html', prediction_text=solution)
 
