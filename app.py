@@ -124,7 +124,7 @@ def main():
 # def predict_api():
     solution = routing.SolveWithParameters(search_parameters)
 #     return render_template('OptimalRoute.html', prediction_text=solution)
-
+    return solution
     # # Print solution on console.
     if solution:
         print_solution(data, manager, routing, solution)
