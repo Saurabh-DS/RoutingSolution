@@ -119,10 +119,10 @@ def main():
     search_parameters.time_limit.FromSeconds(1)
 
 
-@app.route('/predict_api',methods=['POST'])
-def predict_api():
+# @app.route('/predict_api',methods=['POST'])
+# def predict_api():
     solution = routing.SolveWithParameters(search_parameters)
-    return render_template('OptimalRoute.html', prediction_text=solution)
+#     return render_template('OptimalRoute.html', prediction_text=solution)
 
     # # Print solution on console.
     if solution:
