@@ -130,5 +130,12 @@ def main():
         print_solution(data, manager, routing, solution)
 #         return render_template('OptimalRoute.html', prediction_text=print_solution(data, manager, routing, solution))
 
+@app.route('/predict_api',methods=['POST'])
+def predict_api():
+    solution = routing.SolveWithParameters(search_parameters)
+    if solution:
+        print_solution(data, manager, routing, solution)
+    return jsonify()
+
 if __name__ == "__main__":
     app.run(debug=True)
