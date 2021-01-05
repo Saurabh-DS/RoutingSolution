@@ -127,8 +127,8 @@ def main():
 
     # # Print solution on console.
     if solution:
-#         print_solution(data, manager, routing, solution)
-        return render_template('OptimalRoute.html', prediction_text=print_solution(data, manager, routing, solution))
+        print_solution(data, manager, routing, solution)
+#         return render_template('OptimalRoute.html', prediction_text=print_solution(data, manager, routing, solution))
 
 if __name__ == "__main__":
     app.run(debug=True)
