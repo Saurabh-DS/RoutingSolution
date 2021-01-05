@@ -25,7 +25,7 @@ def create_data_model():
     data['demands'] = []
     data['distance_matrix'] = request.args.get('distance_matrix')
     data['vehicle_capacities'] = request.args.get('vehicle_capacities')
-    data['demands'] = request.args.gett('demands')
+    data['demands'] = request.args.get('demands')
     data['num_vehicles'] = request.args.get('num_vehicles')
     data['depot'] = request.args.get('depot')
     return data
