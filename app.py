@@ -23,11 +23,11 @@ def create_data_model():
 #     data['distance_matrix'] = []
 #     data['vehicle_capacities'] = []
 #     data['demands'] = []
-    data['distance_matrix'] = request.values.get('1')
-    data['vehicle_capacities'] = request.values.get('2')
-    data['demands'] = request.values.get('3')
-    data['num_vehicles'] = request.values.get('4')
-    data['depot'] = request.values.get('5')
+    data['distance_matrix'] = request.values.get('distance_matrix')
+    data['vehicle_capacities'] = request.values.get('vehicle_capacities')
+    data['demands'] = request.values.get('demands')
+    data['num_vehicles'] = request.values.get('num_vehicles')
+    data['depot'] = request.values.get('depot')
     return data
 
 def print_solution(data, manager, routing, solution):
