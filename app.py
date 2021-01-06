@@ -127,9 +127,9 @@ def prediction():
     #     return render_template('OptimalRoute.html', prediction_text=solution)
 #         return solution
         # # Print solution on console.
-        if solution:
+#         if solution:
 #             print_solution(data, manager, routing, solution)
-            return render_template('OptimalRoute.html', prediction_text=print_solution(data, manager, routing, solution))
+  return render_template('OptimalRoute.html', prediction_text=print_solution(data, manager, routing, solution))
 
 #     @app.route('/predict_api',methods=['POST'])
 #     def predict_api():
