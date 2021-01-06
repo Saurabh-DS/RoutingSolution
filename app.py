@@ -17,7 +17,6 @@ def home():
 
 
 @app.route('/predict',methods=['POST'])
-def prediction():
     def create_data_model():
 #     result=request.form
         data = {}
@@ -120,16 +119,29 @@ def prediction():
             routing_enums_pb2.LocalSearchMetaheuristic.GUIDED_LOCAL_SEARCH)
         search_parameters.time_limit.FromSeconds(1)
 
+        
+@app.route('/')
+def home():
+    return render_template('OptimalRoute.html')        
 
+app.route('/predict',methods=['POST'])
+    def prediction():
+#     result=request.form
+        data = {}
+        data['distance_matrix'] = [request.values.get('distance_matrix')]
+        data['vehicle_capacities'] = [request.values.get('vehicle_capacities')]
+        data['demands'] = [request.values.get('demands')]
+        data['num_vehicles'] = request.values.get('num_vehicles')
+        data['depot'] = request.values.get('depot')
     # @app.route('/predict_api',methods=['POST'])
     # def predict_api():
         solution = routing.SolveWithParameters(search_parameters)
     #     return render_template('OptimalRoute.html', prediction_text=solution)
 #         return solution
         # # Print solution on console.
-    if solution:
+        if solution:
 #             print_solution(data, manager, routing, solution)
-        return render_template('OptimalRoute.html', prediction_text=print_solution(data, manager, routing, solution))
+            return render_template('OptimalRoute.html', prediction_text=print_solution(data, manager, routing, solution))
 
 #     @app.route('/predict_api',methods=['POST'])
 #     def predict_api():
