@@ -17,29 +17,29 @@ app = Flask(__name__)
 
 
 # @app.route('/predict',methods=['POST'])
-#     def create_data_model():
-# #     result=request.form
-#         data = {}
-# #     data = {}
-# #     data['distance_matrix'] = result['distance_matrix']
-# #     data['vehicle_capacities'] = result['vehicle_capacities']
-# #     data['demands'] = result['demands']
-# #     data['num_vehicles'] = result['num_vehicles']
-# #     data['depot'] = result['depot']
-# #     data['distance_matrix'] = []
-# #     data['vehicle_capacities'] = []
-# #     data['demands'] = []
-#         data['distance_matrix'] = [request.values.get('distance_matrix')]
-#         data['vehicle_capacities'] = [request.values.get('vehicle_capacities')]
-#         data['demands'] = [request.values.get('demands')]
-#         data['num_vehicles'] = [request.values.get('num_vehicles')]
-#         data['depot'] = [request.values.get('depot')]
-# #     data['distance_matrix'] = int_features[0]
-# #     data['vehicle_capacities'] = int_features[1]
-# #     data['demands'] = int_features[2]
-# #     data['num_vehicles'] = int_features[3]
-# #     data['depot'] = int_features[4]
-#         return data
+    def create_data_model():
+#     result=request.form
+        data = {}
+#     data = {}
+#     data['distance_matrix'] = result['distance_matrix']
+#     data['vehicle_capacities'] = result['vehicle_capacities']
+#     data['demands'] = result['demands']
+#     data['num_vehicles'] = result['num_vehicles']
+#     data['depot'] = result['depot']
+#     data['distance_matrix'] = []
+#     data['vehicle_capacities'] = []
+#     data['demands'] = []
+        data['distance_matrix'] = []
+        data['vehicle_capacities'] = []
+        data['demands'] = []
+        data['num_vehicles'] = []
+        data['depot'] = []
+#     data['distance_matrix'] = int_features[0]
+#     data['vehicle_capacities'] = int_features[1]
+#     data['demands'] = int_features[2]
+#     data['num_vehicles'] = int_features[3]
+#     data['depot'] = int_features[4]
+        return data
 
     def print_solution(data, manager, routing, solution):
         total_distance = 0
@@ -127,7 +127,7 @@ def home():
 app.route('/predict',methods=['POST'])
     def prediction():
 #     result=request.form
-        data = {}
+#         data = {}
         data['distance_matrix'] = [request.values.get('distance_matrix')]
         data['vehicle_capacities'] = [request.values.get('vehicle_capacities')]
         data['demands'] = [request.values.get('demands')]
