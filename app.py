@@ -47,7 +47,7 @@ def print_solution(data, manager, routing, solution):
     print('Total distance of all routes: {}m'.format(total_distance))
     print('Total load of all routes: {}'.format(total_load))
 
-@app.route('/main', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 
 def main():
     """Solve the CVRP problem."""
