@@ -12,11 +12,11 @@ def home():
 @app.route('/main', methods=['POST'])
 def create_data_model():
     data = {}
-#     data['distance_matrix'] = [request.values.get('distance_matrix')]
-#     data['vehicle_capacities'] = [request.values.get('vehicle_capacities')]
-#     data['demands'] = [request.values.get('demands')]
-#     data['num_vehicles'] = request.values.get('num_vehicles')
-#     data['depot'] = request.values.get('depot')
+    data['distance_matrix'] = [request.values.get('distance_matrix')]
+    data['vehicle_capacities'] = [request.values.get('vehicle_capacities')]
+    data['demands'] = [request.values.get('demands')]
+    data['num_vehicles'] = request.values.get('num_vehicles')
+    data['depot'] = request.values.get('depot')
     return data
 
 
@@ -52,13 +52,13 @@ def print_solution(data, manager, routing, solution):
 def main():
     """Solve the CVRP problem."""
     # Instantiate the data problem.
-#     data = #create_data_model()
-    data={}
-    data['distance_matrix'] = [request.values.get('distance_matrix')]
-    data['vehicle_capacities'] = [request.values.get('vehicle_capacities')]
-    data['demands'] = [request.values.get('demands')]
-    data['num_vehicles'] = request.values.get('num_vehicles')
-    data['depot'] = request.values.get('depot')
+    data = create_data_model()
+#     data={}
+#     data['distance_matrix'] = [request.values.get('distance_matrix')]
+#     data['vehicle_capacities'] = [request.values.get('vehicle_capacities')]
+#     data['demands'] = [request.values.get('demands')]
+#     data['num_vehicles'] = request.values.get('num_vehicles')
+#     data['depot'] = request.values.get('depot')
     # Create the routing index manager.
     manager = pywrapcp.RoutingIndexManager(len(data['distance_matrix']),
                                            data['num_vehicles'], data['depot'])
