@@ -110,8 +110,8 @@ def main():
 
     # Print solution on console.
     if solution:
-        print_solution(data, manager, routing, solution)
-
+        soln=print_solution(data, manager, routing, solution)
+        return render_template('OptimalRoute.html', prediction_text=soln)
 
 if __name__ == '__main__':
     main()
