@@ -9,7 +9,7 @@ app = Flask(__name__)
 def home():
     return render_template('OptimalRoute.html')
 
-
+@app.route('/main', methods=['POST'])
 def create_data_model():
     data = {}
 #     data['distance_matrix'] = [request.values.get('distance_matrix')]
@@ -47,7 +47,7 @@ def print_solution(data, manager, routing, solution):
     print('Total distance of all routes: {}m'.format(total_distance))
     print('Total load of all routes: {}'.format(total_load))
 
-@app.route('/main', methods=['POST'])
+
 
 def main():
     """Solve the CVRP problem."""
