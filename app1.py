@@ -11,9 +11,9 @@ app = Flask(__name__)
 # data['num_vehicles'] = []
 # data['depot'] = []
 
-# @app.route('/')
-# def home():
-#     return render_template('OptimalRoute.html')
+@app.route('/')
+def home():
+    return render_template('OptimalRoute.html')
 
 
 # @app.route('/predict',methods=['POST'])
