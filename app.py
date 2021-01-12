@@ -12,13 +12,13 @@ def home():
 @app.route('/main', methods=['POST'])
 def create_data_model():
     data = {}
-    data['distance_matrix'] = [request.values.get('distance_matrix')]
-    data['vehicle_capacities'] = [request.values.get('vehicle_capacities')]
+    distance_matrix = [request.values.get('distance_matrix')]
+    vehicle_capacities = [request.values.get('vehicle_capacities')]
     data['demands'] = [request.values.get('demands')]
     data['num_vehicles'] = request.values.get('num_vehicles')
     data['depot'] = request.values.get('depot')
-    data['distance_matrix'] = [int(i) for i in data['distance_matrix']]
-    data['vehicle_capacities'] = [int(i) for i in data['vehicle_capacities']]
+    data['distance_matrix'] = [int(i) for i in distance_matrix]
+    data['vehicle_capacities'] = [int(i) for i in vehicle_capacities]
     return data
 
 
